@@ -59,7 +59,7 @@ public class Philosopher extends Thread {
 
 
     public void thinking() throws InterruptedException {
-        System.out.println(name + " размышляет, и ждет вилки");
+        System.out.println(name+ "размышляет и ждет вилки");
         sleep(random.nextInt(1000,5000));
     }
 
