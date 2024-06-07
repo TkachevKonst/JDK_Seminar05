@@ -34,8 +34,8 @@ public class Philosopher extends Thread {
     public void run() {
         while (countEat < 3) {
             try {
-                eating();
                 thinking();
+                eating();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -48,7 +48,7 @@ public class Philosopher extends Thread {
     public void eating() throws InterruptedException {
         if (table.toGetTableware(leftTableware, rightTableware)){
             countEat ++;
-            System.out.println(name + " кушает");
+            System.out.println(name + " кушает вилками № " + leftTableware + ", " + rightTableware);
             sleep(random.nextInt(3000, 7000));
             table.putTableware(leftTableware, rightTableware);
             System.out.println(name + " закончил прием пищи № " + countEat);
